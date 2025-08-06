@@ -90,3 +90,24 @@ export async function ResetPasswordByRequestService(
     throw err;
   }
 }
+
+export async function VerifyUserService(params: { id: string; token: string }) {
+  try {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const response = await axios.patch(
+      `${apiUrl}/api/auth/verify`,
+      {
+        id: params.id,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${params.token}`,
+        },
+      }
+    );
+
+    return response;
+  } catch (err) {
+    throw err;
+  }
+}

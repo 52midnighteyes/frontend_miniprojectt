@@ -1,9 +1,9 @@
-import ResetPasswordWithTokenView from "@/view/auth/reset_password_with_token";
-
-export default function ResetPasswordWithTokenPage() {
+import { Suspense } from "react";
+import ResetPasswordByTokenView from "@/view/auth/reset_password_with_token";
+export default function Page() {
   return (
-    <div>
-      <ResetPasswordWithTokenView />
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <ResetPasswordByTokenView />
+    </Suspense>
   );
 }
