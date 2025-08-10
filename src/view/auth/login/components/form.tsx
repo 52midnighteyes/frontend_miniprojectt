@@ -112,6 +112,12 @@ export default function LoginForm() {
                 <div className="min-h-4 text-xs text-red-500 ml-1">
                   {touched.password && errors.password && `*${errors.password}`}
                 </div>
+                <a
+                  href="/pages/auth/request-forgot-password"
+                  className="text-xs text-center text-[#FFD700] font-medium hover:underline"
+                >
+                  Forgot password?
+                </a>
               </div>
 
               <Button
